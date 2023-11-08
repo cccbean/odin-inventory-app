@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Create Category</title>
+		<title>Update <%= name %></title>
 		<link rel="stylesheet" href="/stylesheets/style.css" />
 	</head>
 	<body>
-		<h1>Create new category</h1>
-		<form action="/store/create/category" method="post">
+		<h1>Update <%= name %></h1>
+		<form action=<%= `/store/${id}/update` %> method="post">
 			<label for="categoryName">
 				Name:
-				<input type="text" id="categoryName" name="categoryName" />
+				<input type="text" id="categoryName" name="categoryName" value=<%= name %> />
 			</label>
 			<label for="categoryDescription">
 				Description:
-				<input type="text" id="categoryDescription" name="categoryDescription" />
+				<input type="text" id="categoryDescription" name="categoryDescription" value=<%= description %> />
 			</label>
 			<button type="submit">Submit</button>
 		</form>

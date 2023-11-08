@@ -9,5 +9,8 @@
     <p>Description: <%= description %></p>
 		<p>Price: <%= `$${price / 100}` %></p>
     <p><%= numberInStock %> in stock</p>
+		<a href=<%= `/store/items/${id}/delete` %>>Delete this item</a>
+		<a href=<%= `/store/items/${id}/update` %>>Update this item</a>
+		<a href="/store">Back to store</a>
 	</body>
 </html>

@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Create Item</title>
+		<title>Update <%= name %></title>
 		<link rel="stylesheet" href="/stylesheets/style.css" />
 	</head>
 	<body>
-		<h1>Create new item</h1>
-		<form action="/store/create/item" method="post">
+		<h1>Update <%= name %></h1>
+		<form action=<%= `/store/items/${id}/update` %> method="post">
 			<label for="itemName">
 				Name:
-				<input type="text" id="itemName" name="itemName" />
+				<input type="text" id="itemName" name="itemName" value=<%= name %> />
 			</label>
 			<label for="itemDescription">
 				Description:
-				<input type="text" id="itemDescription" name="itemDescription" />
+				<input type="text" id="itemDescription" name="itemDescription" value="<%= description %>" />
 			</label>
       <label for="itemPrice">
 				Price:
-				<input type="number" id="itemPrice" name="itemPrice" />
+				<input type="number" id="itemPrice" name="itemPrice" value=<%= price %> />
 			</label>
       <label for="itemInStock">
 				Amount in stock:
-				<input type="number" id="itemInStock" name="itemInStock" />
+				<input type="number" id="itemInStock" name="itemInStock" value=<%= inStock %> />
 			</label>
       <label for="itemCategory">
         Category:
         <select name="itemCategory" id="itemCategory">
           <% categories.forEach((category) => { %>
-            <option value=<%= category.name %>><%= category.name %></option>
+            <% if (category.name === itemCategory) { %>
+              <option value=<%= category.name %> selected><%= category.name %></option>
+            <% } else { %>
+              <option value=<%= category.name %>><%= category.name %></option>
+            <% } %>
           <% }) %>
         </select>
       </label>

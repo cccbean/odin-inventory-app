@@ -7,14 +7,20 @@
 	<body>
 		<h1><%= title %></h1>
     <p>Description: <%= description %></p>
-		<ul>
-      <% items.forEach((item) => { %>
-        <li>
-          <a href=<%= item.url %>>
-            <%= item.name %>
-          </a>
-        </li>
-      <% }) %>
-    </ul>
+    <% if (items.length !== 0) { %>
+      <ul>
+        <% items.forEach((item) => { %>
+          <li>
+            <a href=<%= item.url %>>
+              <%= item.name %>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <a href=<%= `/store/${id}/delete` %>>Delete this category</a>
+    <% } %>
+    <a href=<%= `/store/${id}/update` %>>Update this category</a>
+    <a href="/store">Back to store</a>
 	</body>
 </html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Delete Category</title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+	</head>
+	<body>
+		<h1>Delete <%= name %></h1>
+    <p>Would you like to delete this category?</p>
+    <form action=<%= `/store/${id}/delete` %> method="post">
+      <button type="submit">Yes</button>
+    </form>
+    <a href=<%= `/store/${id}` %>>Back to category page</a>
+	</body>
+</html>

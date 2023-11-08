@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create Category</title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+	</head>
+	<body>
+		<h1>Create new category</h1>
+		<form action="/store/create/category" method="post">
+			<label for="categoryName">
+				Name:
+				<input type="text" id="categoryName" name="categoryName" />
+			</label>
+			<label for="categoryDescription">
+				Description:
+				<input type="text" id="categoryDescription" name="categoryDescription" />
+			</label>
+			<button type="submit">Submit</button>
+		</form>
+
+		<script>
+			const nameInput = document.getElementById('categoryName');
+			nameInput.addEventListener('change', (ev) => {
+        // How you would add client side validation
+				console.log(ev.target.value);
+			});
+		</script>
+	</body>
+</html>

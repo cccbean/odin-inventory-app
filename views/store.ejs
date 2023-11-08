@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+	</head>
+	<body>
+		<h1><%= title %></h1>
+		<p>Welcome to <%= title %></p>
+		<h2>Categories</h2>
+		<p>There are <%= numberOfCategories %> categories</p>
+		<ul>
+			<% categories.forEach((category) => { %>
+			<li>
+				<a href=<%= category.url %>>
+					<%= category.name %>
+				</a>
+			</li>
+			<% }); %>
+		</ul>
+		<h2>Add to store</h2>
+		<ul>
+			<li><a href="/store/create/category">Create new category</a></li>
+			<li><a href="/store/create/item">Create new item</a></li>
+		</ul>
+	</body>
+</html>
